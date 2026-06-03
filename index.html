@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | Nama Anda</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Navbar */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    backdrop-filter:blur(15px);
+    background:rgba(15,23,42,.8);
+    border-bottom:1px solid rgba(255,255,255,.1);
+    z-index:1000;
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.4rem;
+    font-weight:700;
+    color:#38bdf8;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#38bdf8;
+}
+
+/* Hero */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:100px 20px;
+}
+
+.hero-content{
+    max-width:1200px;
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.hero-text h1{
+    font-size:4rem;
+    line-height:1.1;
+}
+
+.hero-text span{
+    color:#38bdf8;
+}
+
+.hero-text p{
+    margin-top:20px;
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+.btn-group{
+    margin-top:30px;
+    display:flex;
+    gap:15px;
+}
+
+.btn{
+    padding:14px 28px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:600;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#38bdf8;
+    color:black;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-secondary{
+    border:1px solid #38bdf8;
+    color:#38bdf8;
+}
+
+.btn-secondary:hover{
+    background:#38bdf8;
+    color:black;
+}
+
+.hero-image{
+    display:flex;
+    justify-content:center;
+}
+
+.profile-card{
+    width:350px;
+    height:350px;
+    border-radius:30px;
+    background:linear-gradient(135deg,#38bdf8,#0ea5e9);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:7rem;
+    font-weight:bold;
+    color:white;
+    box-shadow:0 20px 60px rgba(56,189,248,.3);
+}
+
+/* Section */
+section{
+    padding:100px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:60px;
+}
+
+.section-title span{
+    color:#38bdf8;
+}
+
+/* About */
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.05);
+}
+
+/* Skills */
+.skills{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.skill{
+    background:#1e293b;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    transition:.3s;
+}
+
+.skill:hover{
+    transform:translateY(-8px);
+}
+
+/* Projects */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.project{
+    background:#1e293b;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.project:hover{
+    transform:translateY(-10px);
+}
+
+.project-image{
+    height:200px;
+    background:linear-gradient(135deg,#38bdf8,#0284c7);
+}
+
+.project-content{
+    padding:25px;
+}
+
+.project-content h3{
+    margin-bottom:10px;
+}
+
+.project-content p{
+    color:#cbd5e1;
+}
+
+/* Contact */
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    color:#cbd5e1;
+    margin-bottom:20px;
+}
+
+/* Footer */
+footer{
+    padding:30px;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.05);
+    color:#94a3b8;
+}
+
+@media(max-width:768px){
+
+.hero-content,
+.about-grid{
+    grid-template-columns:1fr;
+}
+
+.hero-text{
+    text-align:center;
+}
+
+.hero-text h1{
+    font-size:2.8rem;
+}
+
+.btn-group{
+    justify-content:center;
+}
+
+.profile-card{
+    width:250px;
+    height:250px;
+    font-size:5rem;
+}
+
+.nav-links{
+    display:none;
+}
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">Portfolio.</div>
+
+        <div class="nav-links">
+            <a href="#about">Tentang</a>
+            <a href="#skills">Skill</a>
+            <a href="#projects">Project</a>
+            <a href="#contact">Kontak</a>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+
+        <div class="hero-text">
+            <h1>Halo, Saya <span>Nama Anda</span></h1>
+
+            <p>
+                Web Developer, Programmer, dan Teknisi Kelistrikan
+                yang memiliki minat pada pengembangan website,
+                sistem informasi, dan teknologi digital modern.
+            </p>
+
+            <div class="btn-group">
+                <a href="#projects" class="btn btn-primary">Lihat Project</a>
+                <a href="#contact" class="btn btn-secondary">Hubungi Saya</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <div class="profile-card">
+                NA
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+
+        <h2 class="section-title">Tentang <span>Saya</span></h2>
+
+        <div class="about-grid">
+
+            <div class="card">
+                <h3>Profil</h3>
+                <br>
+                <p>
+                    Saya adalah seorang programmer yang berfokus
+                    pada pengembangan website modern menggunakan
+                    HTML, CSS, JavaScript, PHP, Laravel, dan React.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Pendidikan</h3>
+                <br>
+                <p>
+                    SMK Muhammadiyah 12 Jakarta
+                    Jurusan Teknik Instalasi Tenaga Listrik.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="skills">
+    <div class="container">
+
+        <h2 class="section-title">Skill <span>Saya</span></h2>
+
+        <div class="skills">
+
+            <div class="skill">
+                <h3>HTML</h3>
+            </div>
+
+            <div class="skill">
+                <h3>CSS</h3>
+            </div>
+
+            <div class="skill">
+                <h3>JavaScript</h3>
+            </div>
+
+            <div class="skill">
+                <h3>PHP</h3>
+            </div>
+
+            <div class="skill">
+                <h3>Laravel</h3>
+            </div>
+
+            <div class="skill">
+                <h3>React</h3>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="projects">
+    <div class="container">
+
+        <h2 class="section-title">Project <span>Terbaru</span></h2>
+
+        <div class="projects">
+
+            <div class="project">
+                <div class="project-image"></div>
+
+                <div class="project-content">
+                    <h3>Sistem Ujian Online</h3>
+                    <p>
+                        Aplikasi ujian berbasis web dengan
+                        monitoring peserta dan hasil real-time.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-image"></div>
+
+                <div class="project-content">
+                    <h3>Sistem Keuangan Sekolah</h3>
+                    <p>
+                        Sistem manajemen pemasukan dan
+                        pengeluaran sekolah berbasis Laravel.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-image"></div>
+
+                <div class="project-content">
+                    <h3>Dashboard Organisasi</h3>
+                    <p>
+                        Dashboard modern untuk pengelolaan
+                        anggota dan administrasi organisasi.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container contact">
+
+        <h2 class="section-title">Hubungi <span>Saya</span></h2>
+
+        <p>Email: emailanda@gmail.com</p>
+        <p>WhatsApp: 08xxxxxxxxxx</p>
+
+        <a href="#" class="btn btn-primary">
+            Kirim Pesan
+        </a>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 Portfolio. All Rights Reserved.
+</footer>
+
+</body>
+</html>
